@@ -13,7 +13,7 @@ app.use("/public", express.static("public"));
 app.use("/", router);
 
 //listen to port
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`server is listening on ${PORT},
     http://localhost:${PORT}`);
 });
