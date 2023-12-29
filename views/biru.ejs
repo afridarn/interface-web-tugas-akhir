@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../public/styles/styles.css" rel="stylesheet" type="text/css" />
+    <title>TA Afrida</title>
+    <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/disable-element.js"></script>
+  </head>
+
+  <body class="max-w-full bg-indigo-100 px-2 dark:bg-indigo-900">
+    <!-- ICON DARK MODE -->
+    <div class="flex justify-end pt-10 pr-10" id="toggle-dark-mode" onclick="darkMode()">
+      <svg data-name="Layer 2" id="Layer_2" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 cursor-pointer stroke-indigo-900 dark:stroke-indigo-100 dark:fill-indigo-100">
+        <path
+          d="M18.44,34.68a18.22,18.22,0,0,1-2.94-.24,18.18,18.18,0,0,1-15-20.86A18.06,18.06,0,0,1,9.59.63,2.42,2.42,0,0,1,12.2.79a2.39,2.39,0,0,1,1,2.41L11.9,3.1l1.23.22A15.66,15.66,0,0,0,23.34,21h0a15.82,15.82,0,0,0,8.47.53A2.44,2.44,0,0,1,34.47,25,18.18,18.18,0,0,1,18.44,34.68ZM10.67,2.89a15.67,15.67,0,0,0-5,22.77A15.66,15.66,0,0,0,32.18,24a18.49,18.49,0,0,1-9.65-.64A18.18,18.18,0,0,1,10.67,2.89Z"
+        />
+      </svg>
+    </div>
+
+    <!-- MAIN -->
+    <div class="pt-10">
+      <!-- JUDUL -->
+      <h1 class="text-center text-3xl md:text-4xl lg:text-6xl font-semibold text-indigo-900 dark:text-indigo-100">Klasifikasi Larva Nyamuk</h1>
+
+      <!-- SECTION UPLOAD -->
+      <div class="flex justify-center">
+        <div class="mt-6">
+          <div class="flex justify-center">
+            <h6 class="text-indigo-900 mb-2 inline-block mx-auto font-semibold text-sm md:text-md lg:text-lg dark:text-indigo-100">Unggah di sini</h6>
+          </div>
+          <!-- BOX UNGGAH FILE -->
+          <div
+            class="transition ease-in-out border-dashed rounded-md mt-4 mb-10 border-2 border-indigo-900 py-10 px-20 md:py-14 md:px-36 lg:py-20 lg:px-60 bg-indigo-200 cursor-pointer hover:bg-indigo-200 hover:scale-105 dark:border-indigo-100 dark:bg-indigo-800 dark:hover:bg-indigo-700 dark:hover:border-indigo-100"
+            onclick="triggerClick()"
+          >
+            <!-- IMAGE PREVIEW -->
+            <img id="image-preview" class="hidden" src="#" alt="your image" />
+            <!-- ICON BELUM ADA GAMBAR -->
+            <svg version="1.1" id="upload-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 312.602 312.602" xml:space="preserve" class="fill-indigo-900 dark:fill-indigo-100 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 mx-auto">
+              <path
+                d="M251.52,137.244c-3.966,0-7.889,0.38-11.738,1.134c-1.756-47.268-40.758-85.181-88.448-85.181
+               c-43.856,0-80.964,32.449-87.474,75.106C28.501,129.167,0,158.201,0,193.764c0,36.106,29.374,65.48,65.48,65.48h54.782
+               c4.143,0,7.5-3.357,7.5-7.5c0-4.143-3.357-7.5-7.5-7.5H65.48c-27.835,0-50.48-22.645-50.48-50.48c0-27.835,22.646-50.48,50.48-50.48
+               c1.367,0,2.813,0.067,4.419,0.206l7.6,0.658l0.529-7.61c2.661-38.322,34.861-68.341,73.306-68.341
+               c40.533,0,73.51,32.977,73.51,73.51c0,1.863-0.089,3.855-0.272,6.088l-0.983,11.968l11.186-4.367
+               c5.356-2.091,10.99-3.151,16.747-3.151c25.409,0,46.081,20.672,46.081,46.081c0,25.408-20.672,46.08-46.081,46.08
+               c-0.668,0-20.608-0.04-40.467-0.08c-19.714-0.04-39.347-0.08-39.999-0.08c-4.668,0-7.108-2.248-7.254-6.681v-80.959l8.139,9.667
+               c2.667,3.17,7.399,3.576,10.567,0.907c3.169-2.667,3.575-7.398,0.907-10.567l-18.037-21.427c-2.272-2.699-5.537-4.247-8.958-4.247
+               c-3.421,0-6.686,1.548-8.957,4.247l-18.037,21.427c-2.668,3.169-2.262,7.9,0.907,10.567c1.407,1.185,3.121,1.763,4.826,1.763
+               c2.137,0,4.258-0.908,5.741-2.67l7.901-9.386v80.751c0,8.686,5.927,21.607,22.254,21.607c0.652,0,20.27,0.04,39.968,0.079
+               c19.874,0.041,39.829,0.081,40.498,0.081c33.681,0,61.081-27.4,61.081-61.08C312.602,164.644,285.201,137.244,251.52,137.244z"
+              />
+            </svg>
+            <p class="text-center text-indigo-900 dark:text-indigo-100" id="keterangan">Belum ada gambar tes</p>
+          </div>
+
+          <!-- BUTTON HAPUS DAN UPLOAD -->
+          <div class="flex justify-center mb-10" style="display: none" id="buttons-action">
+            <button
+              class="inline-block rounded border border-current bg-white px-8 py-3 mr-2 text-sm font-semibold text-indigo-900 transition hover:scale-110 hover:shadow-xl focus:outline-none active:text-indigo-700 dark:bg-indigo-800 dark:text-white dark:border-none dark:active:bg-indigo-600"
+              onclick="deleteImage()"
+            >
+              Hapus
+            </button>
+            <!-- HIDDEN INPUT -->
+            <form hx-encoding="multipart/form-data" hx-post="/upload" hx-target="#result" hx-indicator="#spinner" hx-ext="disable-element" hx-disable-element="#to-disable">
+              <input
+                class="hidden relative m-0 w-full min-w-0 flex-auto rounded border border-solid border-amber-500 bg-clip-padding px-10 py-[10rem] text-base font-normal text-white transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-amber-400 file:px-3 file:py-[0.32rem] file:text-white file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-white hover:file:text-amber-400 focus:border-primary focus:text-amber-400 focus:shadow-te-primary focus:outline-none"
+                type="file"
+                onchange="readURL(this);"
+                id="formFile"
+                accept="image/*;capture=camera"
+                name="image"
+              />
+              <button
+                id="to-disable"
+                class="inline-block rounded bg-indigo-900 px-8 py-3 ml-2 text-sm font-semibold text-white enabled:transition enabled:hover:scale-110 enabled:hover:shadow-xl enabled:focus:outline-none enabled:active:bg-indigo-800 dark:bg-white dark:border dark:border-current dark:text-indigo-900 enabled:dark:active:text-indigo-700 disabled:cursor-not-allowed"
+              >
+                <img src="../public/assets/loading.gif" id="spinner" class="my-indicator h-8 w-8" />
+                Upload
+              </button>
+            </form>
+          </div>
+          <!-- SECTION HASIL -->
+          <div class="flex justify-center">
+            <h6 class="text-indigo-900 mb-2 inline-block mx-auto font-semibold text-sm md:text-md lg:text-lg dark:text-indigo-100" id="result"></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="flex justify-center">
+      <p class="text-indigo-900 font-semibold text-xs my-10 dark:text-indigo-100">Made with ♡ by Afrida</p>
+    </div>
+
+    <script>
+      function toggleDarkMode() {
+        const html = document.querySelector("html");
+        html.classList.toggle("dark");
+      }
+
+      const toggleButton = document.querySelector("#toggle-dark-mode");
+      toggleButton.addEventListener("click", toggleDarkMode);
+
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var img = document.getElementById("image-preview");
+            var icon = document.getElementById("upload-icon");
+            var keterangan = document.getElementById("keterangan");
+            var buttons = document.getElementById("buttons-action");
+            img.src = e.target.result;
+            img.width = 200;
+            img.height = 200;
+            img.classList.remove("hidden");
+            icon.classList.add("hidden");
+            keterangan.classList.add("hidden");
+            buttons.style.removeProperty("display");
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+
+      function triggerClick() {
+        var fileInput = document.getElementById("formFile");
+        fileInput.click();
+      }
+
+      function deleteImage() {
+        var img = document.getElementById("image-preview");
+        var icon = document.getElementById("upload-icon");
+        var keterangan = document.getElementById("keterangan");
+        var fileInput = document.getElementById("formFile");
+        var buttons = document.getElementById("buttons-action");
+        var result = document.getElementById("result");
+
+        img.classList.add("hidden");
+        icon.classList.remove("hidden");
+        keterangan.classList.remove("hidden");
+        img.src = "#";
+        fileInput.value = "";
+        buttons.style.display = "none";
+        result.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
