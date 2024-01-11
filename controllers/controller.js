@@ -27,7 +27,7 @@ exports.checkUpload = async (req, res, next) => {
     }
 
     try {
-      const response = await axios.post("http://10.15.40.220:8000/classification", formData);
+      const response = await axios.post("http://127.0.0.1:8000/classification", formData);
 
       const apiResponse = response.data;
       const resultCounts = {
@@ -49,7 +49,6 @@ exports.checkUpload = async (req, res, next) => {
       let maxCount;
       let otherSpecies;
       let differOrgan = null;
-      console.log(apiResponse);
 
       let firstSpecies = apiResponse[Object.keys(apiResponse)[0]].result;
 

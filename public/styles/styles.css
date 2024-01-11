@@ -625,6 +625,9 @@ html {
 .mt-14{
   margin-top: 3.5rem;
 }
+.mb-5{
+  margin-bottom: 1.25rem;
+}
 .inline-block{
   display: inline-block;
 }
@@ -960,11 +963,27 @@ html {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-\[10px\]{
+  font-size: 10px;
+}
+.text-\[6px\]{
+  font-size: 6px;
+}
+.text-\[14px\]{
+  font-size: 14px;
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .font-semibold{
   font-weight: 600;
 }
 .font-normal{
   font-weight: 400;
+}
+.font-medium{
+  font-weight: 500;
 }
 .capitalize{
   text-transform: capitalize;
@@ -1396,9 +1415,17 @@ html {
     gap: 0.5rem;
   }
 
+  .sm\:text-center{
+    text-align: center;
+  }
+
   .sm\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-\[12px\]{
+    font-size: 12px;
   }
 }
 @media (min-width: 768px){
@@ -1429,6 +1456,15 @@ html {
   .md\:text-base{
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-\[14px\]{
+    font-size: 14px;
+  }
+
+  .md\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 @media (min-width: 1024px){
@@ -1481,6 +1517,11 @@ html {
   .lg\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 @media (min-width: 1280px){

@@ -12,12 +12,11 @@
   </head>
 
   <body class="max-w-full bg-indigo-100 px-2 dark:bg-indigo-900">
-    <!-- ICON DARK MODE -->
     <div class="flex justify-end pt-10 pr-10 animate-fade-left animate-once">
       <div class="flex-grow">
-        <h1 class="text-center text-3xl md:text-4xl lg:text-6xl font-semibold text-indigo-900 dark:text-indigo-100 animate-fade-down animate-once">Klasifikasi Larva Nyamuk</h1>
+        <h1 class="sm:text-center text-2xl md:text-3xl lg:text-5xl font-semibold text-indigo-900 dark:text-indigo-100 animate-fade-down animate-once">Klasifikasi Larva Nyamuk</h1>
       </div>
-      <div class="flex-none" id="toggle-dark-mode" onclick="darkMode()">
+      <div class="flex-none" id="toggle-dark-mode">
         <svg data-name="Layer 2" id="Layer_2" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 cursor-pointer stroke-indigo-900 dark:stroke-indigo-100 dark:fill-indigo-100">
           <path
             d="M18.44,34.68a18.22,18.22,0,0,1-2.94-.24,18.18,18.18,0,0,1-15-20.86A18.06,18.06,0,0,1,9.59.63,2.42,2.42,0,0,1,12.2.79a2.39,2.39,0,0,1,1,2.41L11.9,3.1l1.23.22A15.66,15.66,0,0,0,23.34,21h0a15.82,15.82,0,0,0,8.47.53A2.44,2.44,0,0,1,34.47,25,18.18,18.18,0,0,1,18.44,34.68ZM10.67,2.89a15.67,15.67,0,0,0-5,22.77A15.66,15.66,0,0,0,32.18,24a18.49,18.49,0,0,1-9.65-.64A18.18,18.18,0,0,1,10.67,2.89Z"
@@ -27,7 +26,6 @@
     </div>
 
     <!-- MAIN -->
-    <!-- JUDUL -->
 
     <!-- SECTION UPLOAD -->
     <div class="flex justify-center">
@@ -45,8 +43,8 @@
             id="input-kepala"
           >
             <p class="absolute top-4 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100">KEPALA</p>
-            <p class="absolute hidden top-10 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="result-kepala"></p>
-            <p class="absolute hidden top-14 mb-6 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="score-kepala">Confidence Score = <span id="value-kepala"></span></p>
+            <p class="absolute hidden top-10 mb-6 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="result-kepala"></p>
+            <p class="absolute hidden top-14 mb-2 text-center font-medium text-[10px] sm:text-[12px] md:text-[14px] text-indigo-900 dark:text-indigo-100" id="score-kepala">Confidence Score = <span id="value-kepala"></span></p>
 
             <!-- IMAGE PREVIEW -->
             <img id="image-preview-kepala" class="hidden" src="#" alt="your image" style="max-width: 224px; height: auto" />
@@ -104,8 +102,9 @@
             id="input-abdomen"
           >
             <p class="absolute top-4 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100">ABDOMEN</p>
-            <p class="absolute hidden top-10 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="result-abdomen"></p>
-            <p class="absolute hidden top-14 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="score-abdomen">Confidence Score = <span id="value-abdomen"></span></p>
+            <p class="absolute hidden top-10 mb-6 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="result-abdomen"></p>
+            <p class="absolute hidden top-14 mb-2 text-center font-medium text-[10px] sm:text-[12px] md:text-[14px] text-indigo-900 dark:text-indigo-100" id="score-abdomen">Confidence Score = <span id="value-abdomen"></span></p>
+
             <!-- IMAGE PREVIEW -->
             <img id="image-preview-abdomen" class="hidden" src="#" alt="your image" style="max-width: 224px; height: auto" />
             <!-- ICON BELUM ADA GAMBAR -->
@@ -161,8 +160,9 @@
             id="input-siphon"
           >
             <p class="absolute top-4 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100">SIPHON</p>
-            <p class="absolute hidden top-10 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="result-siphon"></p>
-            <p class="absolute hidden top-14 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="score-siphon">Confidence Score = <span id="value-siphon"></span></p>
+            <p class="absolute hidden top-10 mb-6 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="result-siphon"></p>
+            <p class="absolute hidden top-14 mb-2 text-center font-medium text-[10px] sm:text-[12px] md:text-[14px] text-indigo-900 dark:text-indigo-100" id="score-siphon">Confidence Score = <span id="value-siphon"></span></p>
+
             <!-- IMAGE PREVIEW -->
             <img id="image-preview-siphon" class="hidden" src="#" alt="your image" style="max-width: 224px; height: auto" />
             <!-- ICON BELUM ADA GAMBAR -->
@@ -218,8 +218,9 @@
             id="input-fullbody"
           >
             <p class="absolute top-4 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100">FULL BODY</p>
-            <p class="absolute hidden top-10 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="result-fullbody"></p>
-            <p class="absolute hidden top-14 mb-4 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="score-fullbody">Confidence Score = <span id="value-fullbody"></span></p>
+            <p class="absolute hidden top-10 mb-6 text-center font-semibold text-xs sm:text-sm md:text-base text-indigo-900 dark:text-indigo-100" id="result-fullbody"></p>
+            <p class="absolute hidden top-14 mb-2 text-center font-medium text-[10px] sm:text-[12px] md:text-[14px] text-indigo-900 dark:text-indigo-100" id="score-fullbody">Confidence Score = <span id="value-fullbody"></span></p>
+
             <!-- IMAGE PREVIEW -->
             <img id="image-preview-fullbody" class="hidden" src="#" alt="your image" style="max-width: 224px; height: auto" />
             <!-- ICON BELUM ADA GAMBAR -->
@@ -341,17 +342,17 @@
     </div>
 
     <script>
-      //DARK MODE
+      // dark mode
       document.querySelector("#toggle-dark-mode").addEventListener("click", () => {
         document.querySelector("html").classList.toggle("dark");
       });
 
-      //CAPITALIZE HELPER
+      // capitalize helper
       function capitalize(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
 
-      //GET ELEMENTS HELPER
+      // get elements helper
       function getElements(type) {
         return {
           container: document.getElementById(`input-${type}`),
@@ -366,17 +367,17 @@
         };
       }
 
-      //DEFINE ELEMENTS
+      // define elements
       const submitButton = document.getElementById("submitButton");
       const sectionResult = document.getElementById("section-result");
       const resultOne = document.getElementById("result-one");
       const resultTwo = document.getElementById("result-two");
       const resultThree = document.getElementById("result-three");
 
-      //DEFINE IMAGE TYPES
+      // define image types
       const imageTypes = ["kepala", "abdomen", "siphon", "fullbody"];
 
-      //HIDE ELEMENT HELPER
+      // hide element
       function hideElement(element) {
         if (!element.classList.contains("hidden")) {
           element.classList.add("hidden");
@@ -386,7 +387,7 @@
         }
       }
 
-      //HIDE ELEMENT PER RESULT
+      // hide element per result
       function hideElementPerResult() {
         hideElement(sectionResult);
         hideElement(resultOne);
@@ -399,7 +400,7 @@
         });
       }
 
-      //ONCLICK SHOW INPUT
+      // onclick show input
       function triggerClick(jenis) {
         var fileInput = document.getElementById("formFile" + capitalize(jenis));
         if (fileInput) {
@@ -407,13 +408,13 @@
         }
       }
 
-      //ONCHANGE SHOW/HIDE BUTTON
+      // onchange show/hide button
       function updateUploadButtonVisibility() {
         const isAnyImageVisible = imageTypes.some((type) => !document.getElementById(`image-preview-${type}`).classList.contains("hidden"));
         document.getElementById("buttons-action").style.display = isAnyImageVisible ? "" : "none";
       }
 
-      // ONCHANGE SHOW IMAGE
+      // onchange show image
       function readURL(input, type) {
         if (input.files && input.files[0]) {
           const file = input.files[0];
@@ -443,7 +444,7 @@
         }
       }
 
-      //DELETE IMAGE
+      // delete image
       function deleteImage(type) {
         event.stopPropagation();
         const elements = getElements(type);
@@ -462,7 +463,7 @@
         hideElementPerResult();
       }
 
-      //SUBMIT FORM
+      // submit form
       document.getElementById("uploadForm").addEventListener("submit", async (e) => {
         e.preventDefault();
         hideElementPerResult();
@@ -486,27 +487,21 @@
           submitButton.disabled = false;
           document.getElementById("button-reset").classList.remove("hidden");
           const result = await response.json();
-          console.log(result);
           sectionResult.classList.remove("hidden");
 
           if (result.species === "tie") {
-            console.log("masuk1");
             resultOne.classList.remove("hidden");
           } else if (result.otherSpecies) {
-            console.log("masuk2");
-            console.log(Object.keys(result.results).length);
             resultTwo.classList.remove("hidden");
             document.getElementById("other-species").innerText = result.otherSpecies === "aedes" ? "Aedes aegypti" : "Culex quinquefasciatus";
             document.getElementById("species-result").innerText = result.species === "aedes" ? "Aedes aegypti" : "Culex quinquefasciatus";
             document.getElementById("organ-differ").innerText = result.differOrgan;
           } else {
-            console.log("masuk3");
             resultThree.classList.remove("hidden");
             document.getElementById("species-result-fix").innerText = result.species === "aedes" ? "Aedes aegypti" : "Culex quinquefasciatus";
           }
 
           for (let key in result.results) {
-            console.log(key);
             const elements = getElements(key);
             elements.img.classList.remove("mt-8");
             elements.img.classList.add("mt-14");
