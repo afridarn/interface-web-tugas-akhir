@@ -333,6 +333,7 @@
           Sistem memprediksi spesies larva ini adalah <span id="species-result" class="font-semibold"></span>. Namun, harap diperhatikan pada gambar <span class="font-semibold" id="organ-differ"></span> sistem memprediksi spesies <span id="other-species" class="font-semibold"></span>
         </p>
         <p class="text-indigo-900 dark:text-indigo-100 hidden" id="result-three">Sistem memprediksi spesies larva ini adalah <span id="species-result-fix" class="font-semibold"></span>.</p>
+        <p class="text-indigo-900 dark:text-indigo-100 hidden" id="error-result"></p>
       </div>
     </div>
 
@@ -373,6 +374,7 @@
       const resultOne = document.getElementById("result-one");
       const resultTwo = document.getElementById("result-two");
       const resultThree = document.getElementById("result-three");
+      const errorResult = document.getElementById("error-result");
 
       // define image types
       const imageTypes = ["kepala", "abdomen", "siphon", "fullbody"];
@@ -393,6 +395,7 @@
         hideElement(resultOne);
         hideElement(resultTwo);
         hideElement(resultThree);
+        hideElement(errorResult);
         imageTypes.forEach((type) => {
           const elements = getElements(type);
           hideElement(elements.result);
@@ -518,6 +521,9 @@
         } catch (error) {
           console.error("Error:", error);
           submitButton.disabled = false;
+          sectionResult.classList.remove("hidden");
+          errorResult.classList.remove("hidden");
+          document.getElementById("error-result").innerText = "Error: " + error;
           document.getElementById("button-reset").classList.remove("hidden");
         }
       });
